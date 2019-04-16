@@ -12,18 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: f229e6af054b2844c8beda1e02d3b7b7
   - enabled: 1
-    path: Assets/Scenes/FightPhase.unity
-    guid: 19d20a5d67deb5040a7f8c5d19db414b
-  - enabled: 1
-    path: Assets/Scenes/GestionPhase.unity
-    guid: 18026b9a788d3b244ab006dfe61be714
-  - enabled: 1
-    path: Assets/Scenes/WorldmapPhase.unity
-    guid: 841cbd3faa4854146b23eceea29e61e5
-  - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: ad1db57f660a98a48988831f2546501f
   - enabled: 1
     path: Assets/Scenes/CinematicPhase.unity
     guid: 436b40d0a1e798e48a12ef9ad2a76890
+  - enabled: 1
+    path: Assets/Scenes/GestionPhase.unity
+    guid: 18026b9a788d3b244ab006dfe61be714
+  - enabled: 1
+    path: Assets/Scenes/FightPhase.unity
+    guid: 19d20a5d67deb5040a7f8c5d19db414b
+  - enabled: 1
+    path: Assets/Scenes/WorldmapPhase.unity
+    guid: 841cbd3faa4854146b23eceea29e61e5
   m_configObjects: {}
