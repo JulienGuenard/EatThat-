@@ -6,6 +6,6 @@ public class DialogueArt : Dialogue
 {
     public void ChangePortrait()
     {
-        dialoguePortraitCur.portrait.sprite = dialogueOBJ.portrait;
+        dialoguePosition.dialoguePortraitCur.portrait.sprite = dialogueOBJ.portrait;
     }
 }

@@ -1,36 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    [System.Serializable]
-    public class DialoguePortrait
-    {
-        public GameObject parent;
-        public TextMeshProUGUI title;
-        public TextMeshProUGUI dialogue;
-        public Image portrait;
-    }
+  public static DialogueOBJ dialogueOBJ;
 
-    [Header("References")]
-    public List<DialoguePortrait> dialoguePortraitList;
+ public static DialoguePosition dialoguePosition;
+public static DialogueText dialogueText;
+public static DialogueArt dialogueArt;
+ public static DialogueSound dialogueSound;
+ public static AudioSource audioSource;
 
-    [HideInInspector] public DialogueOBJ dialogueOBJ;
-
-    [HideInInspector] public DialoguePosition dialoguePosition;
-    [HideInInspector] public DialogueText dialogueText;
-    [HideInInspector] public DialogueArt dialogueArt;
-    [HideInInspector] public DialogueSound dialogueSound;
-    [HideInInspector] public AudioSource audioSource;
-
-    [HideInInspector] public DialoguePortrait dialoguePortraitCur;
+    public static Dialogue inst;
 
     // Start is called before the first frame update
     void Awake()
     {
+        if (!inst) inst = this;
+        
         dialoguePosition = GetComponent<DialoguePosition>();
         dialogueText = GetComponent<DialogueText>();
         dialogueArt = GetComponent<DialogueArt>();

@@ -7,8 +7,11 @@ public class Cinematic : MonoBehaviour
     public CinematicOBJ cinematicOBJ;
     public Dialogue dialogue;
 
+    [HideInInspector] public AudioSource audioSource;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         StartMusic();
         ReadDialogue(0);
     }
@@ -20,12 +23,12 @@ public class Cinematic : MonoBehaviour
 
     private void StartMusic()
     {
-        Camera.main.GetComponent<AudioSource>().clip = cinematicOBJ.music;
-        Camera.main.GetComponent<AudioSource>().Play();
+        audioSource.clip = cinematicOBJ.music;
+        audioSource.Play();
     }
 
     private void StopMusic()
     {
-        Camera.main.GetComponent<AudioSource>().Stop();
+        audioSource.Stop();
     }
 }

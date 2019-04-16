@@ -8,6 +8,7 @@ public class DialogueSound : Dialogue
     {
         audioSource.Stop();
         audioSource.clip = dialogueOBJ.dialogueSound;
-        audioSource.Play();
+        audioSource.pitch = Random.Range(0.9f, 1.4f);
+        audioSource.PlayOneShot(dialogueOBJ.dialogueSound);
     }
 }

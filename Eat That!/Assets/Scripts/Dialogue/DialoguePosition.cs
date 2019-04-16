@@ -1,10 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialoguePosition : Dialogue
 {
-public void ChangePosition()
+
+    [System.Serializable]
+    public class DialoguePortrait
+    {
+        public GameObject parent;
+        public TextMeshProUGUI title;
+        public TextMeshProUGUI dialogue;
+        public Image portrait;
+    }
+
+    public List<DialoguePortrait> dialoguePortraitList;
+
+    [HideInInspector] public DialoguePortrait dialoguePortraitCur;
+
+    public void ChangePosition()
     {
         for(int i = 0; i < dialoguePortraitList.Count; i++)
         {

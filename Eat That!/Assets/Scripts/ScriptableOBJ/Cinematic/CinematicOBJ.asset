@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c275eed53f66fef4b87041f23fffffec, type: 3}
   m_Name: CinematicOBJ
   m_EditorClassIdentifier: 
-  listDialogue: []
-  music: {fileID: 0}
+  listDialogue:
+  - {fileID: 11400000, guid: a43b846c1cb3eda4197acee0c4f89788, type: 2}
+  music: {fileID: 8300000, guid: c04620b069461cb4e98611547f92197d, type: 3}
