@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aebbff2c9e6d3f49a568cab29591ae3, type: 3}
+  m_Name: EventOBJ
+  m_EditorClassIdentifier: 
+  lifeMax: 0
+  lifeDefense: 0
+  lifeInvulTime: 0
+  speedAcc: 0
+  speedMax: 0
+  speedMovement: 0
+  speedAim: 0
+  knockbackForce: 0
+  knockbackTime: 0
+  knockbackDefense: 0
+  animalAnimator: {fileID: 0}
+  attackAnimator: {fileID: 0}
+  iconAnimator: {fileID: 0}
+  lootRarity: 0
+  lootChances: 0
+  EapparitionChances: 0
+  effectList: []
+  animalType: 0
+  tooltipTitle: 
+  tooltipText: 
+  tooltipDescription: 
+  SFXapparition: {fileID: 0}
+  SFXdeath: {fileID: 0}
+  SFXattack: {fileID: 0}
+  SFXhurted: {fileID: 0}
+  SFXwalk: {fileID: 0}
+  SFXinventory: {fileID: 0}
