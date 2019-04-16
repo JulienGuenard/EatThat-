@@ -71,3 +71,9 @@ public enum FXhappening
  AtDeath,
  AtAttack
 }
+
+public enum PortraitPosition
+{
+    Left,
+    Right
+}
