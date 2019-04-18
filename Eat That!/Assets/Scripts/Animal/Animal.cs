@@ -28,9 +28,17 @@ public class Animal : MonoBehaviour
     public float knockbackForce;
     private bool isInvulnerableKnock;
 
-    private bool isDeath;
+    [HideInInspector] public bool isDeath;
    
     private Rigidbody2D rigid;
+
+    [HideInInspector] public AnimalMovement animalMovement;
+    [HideInInspector] public AnimalLife animalLife;
+    [HideInInspector] public AnimalTooltip animalTooltip;
+    [HideInInspector] public AnimalArt animalArt;
+    [HideInInspector] public AnimalAudio animalAudio;
+    [HideInInspector] public AnimalEffect animalEffect;
+    [HideInInspector] public AnimalKnockback animalKnockback;
 
     void Awake()
     {
@@ -39,7 +47,14 @@ public class Animal : MonoBehaviour
         isInvulnerable = false;
         isInvulnerableKnock = false;
         isDeath = false;
-        noMoreAim = false;
+
+        animalMovement = GetComponent<AnimalMovement>();
+        animalLife = GetComponent<AnimalLife>();
+        animalTooltip = GetComponent<AnimalTooltip>();
+        animalArt = GetComponent<AnimalArt>();
+        animalAudio = GetComponent<AnimalAudio>();
+        animalEffect = GetComponent<AnimalEffect>();
+        animalKnockback = GetComponent<AnimalKnockback>();
     }
 
     // Update is called once per frame
@@ -49,7 +64,7 @@ public class Animal : MonoBehaviour
 
         ChooseAim();
 
-        Move();
+        //Move();
     }
 
     void ChooseAim()
@@ -65,28 +80,13 @@ public class Animal : MonoBehaviour
                 aim = obj;
                 return;
             }
-          
         }
 
         noMoreAim = true;
 
     }
 
-    void Move()
-    {
-        Vector2 aimPos = Vector2.ClampMagnitude(transform.position - transform.position, speed);
 
-        if (aim)
-            aimPos = Vector2.ClampMagnitude(aim.transform.position - transform.position, speed);
-
-        speedCur += aimPos;
-
-        speedCur = Vector2.ClampMagnitude(speedCur, speedMax);
-
-        
-
-        rigid.velocity = speedCur;
-    }
 
     public void LoseLife(float value)
     {

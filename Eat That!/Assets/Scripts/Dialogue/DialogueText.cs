@@ -14,10 +14,19 @@ public class DialogueText : Dialogue
 
     private IEnumerator ReadDialogue()
     {
+        float letterSoundDelay = 2;
+        float letterSoundDelayCur = 0;
         for(int i = 0; i < dialogueOBJ.dialogueText.Length; i++)
         {
             dialoguePosition.dialoguePortraitCur.dialogue.text = dialogueOBJ.dialogueText.Substring(0, i);
-            dialogueSound.PlayLetter();
+            letterSoundDelayCur++;
+
+            if (letterSoundDelayCur >= letterSoundDelay)
+            {
+                    letterSoundDelayCur = 0;
+                    dialogueSound.PlayLetter();
+            }
+
             yield return new WaitForSeconds(dialogueOBJ.letterDelay);
         }
     }

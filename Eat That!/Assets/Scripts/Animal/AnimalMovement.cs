@@ -4,15 +4,55 @@ using UnityEngine;
 
 public class AnimalMovement : Animal
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool noMoreAim = false;
+    private Animal aim;
+
+    private Vector2 speedCur;
+
+    private Rigidbody2D rigid;
+
+    private void Awake()
     {
-        
+        noMoreAim = false;
+        rigid = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Move();
+    }
+
+    public void ChooseAim()
+    {
+        if (noMoreAim) return;
+
+        if (aim && !aim.isDeath) return;
+
+        foreach (Animal obj in FindObjectsOfType<Animal>())
+        {
+            if (!obj.isDeath && obj != this && obj.owner != owner)
+            {
+                aim = obj;
+                return;
+            }
+
+        }
+
+        noMoreAim = true;
+
+    }
+
+    public void Move()
+    {
+        Vector2 aimPos = Vector2.ClampMagnitude(transform.position - transform.position, speed);
+
+        if (aim)
+            aimPos = Vector2.ClampMagnitude(aim.transform.position - transform.position, speed);
+
+        speedCur += aimPos;
+
+        speedCur = Vector2.ClampMagnitude(speedCur, speedMax);
+
+        rigid.velocity = speedCur;
     }
 }

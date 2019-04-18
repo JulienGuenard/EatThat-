@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a26c049785819e4a882a7e1e36ecec5, type: 3}
+  m_Name: Intro3
+  m_EditorClassIdentifier: 
+  titleText: Mike
+  dialogueText: Je ne veux pas vous faire de mal...
+  letterDelay: 0.09
+  portrait: {fileID: 21300000, guid: 760c1f2203cf29e4f9d39f5c1c0ab3f9, type: 3}
+  portraitPosition: 1
+  dialogueSound: {fileID: 8300000, guid: 1e56cb259603f42479cd980ed507272d, type: 3}

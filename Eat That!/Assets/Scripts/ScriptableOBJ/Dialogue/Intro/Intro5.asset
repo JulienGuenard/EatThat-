@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a26c049785819e4a882a7e1e36ecec5, type: 3}
-  m_Name: DialogueOBJ
+  m_Name: Intro5
   m_EditorClassIdentifier: 
-  titleText: Enemy Cow
-  dialogueText: "H\xE9h\xE9, d\xE9sol\xE9 ma vieille mais on ne passe pas, cet herbe
-    est pour nous !"
-  letterDelay: 0.12
+  titleText: Gustav
+  dialogueText: Attrapez le !
+  letterDelay: 0.06
   portrait: {fileID: 21300000, guid: 635a146c5e5e8cf44841015df8f8391a, type: 3}
   portraitPosition: 0
   dialogueSound: {fileID: 8300000, guid: 1e56cb259603f42479cd980ed507272d, type: 3}

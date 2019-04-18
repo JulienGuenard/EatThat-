@@ -25,6 +25,9 @@ public class AnimalOBJ : ScriptableObject
     public Animator attackAnimator;
     public Animator iconAnimator;
 
+    [Header("Attack")]
+    public List<AttackOBJ> attackOBJlist;
+
     //
 
     [Header("Loot")]

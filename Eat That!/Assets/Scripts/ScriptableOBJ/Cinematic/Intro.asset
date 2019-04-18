@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c275eed53f66fef4b87041f23fffffec, type: 3}
-  m_Name: CinematicOBJ
+  m_Name: Intro
   m_EditorClassIdentifier: 
   listDialogue:
   - {fileID: 11400000, guid: a43b846c1cb3eda4197acee0c4f89788, type: 2}
+  - {fileID: 11400000, guid: 77305ab0c02bc204eb9299ca6b26b134, type: 2}
+  - {fileID: 11400000, guid: 867605cd89be90845badad051c2e9a2d, type: 2}
+  - {fileID: 11400000, guid: 07685e7f8214b1449ae9fe80ac034dc3, type: 2}
+  - {fileID: 11400000, guid: 1e5de1f5fced559429627e2a73737f5e, type: 2}
   music: {fileID: 8300000, guid: c04620b069461cb4e98611547f92197d, type: 3}
