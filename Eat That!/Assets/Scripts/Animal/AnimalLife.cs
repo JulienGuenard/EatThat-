@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class AnimalLife : Animal
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float lifeMax;
+    private float lifeCur;
+
+    public float invulnerabilityTime;
+    private bool isInvulnerable;
+
+  /*  private void Awake()
     {
-        
+        lifeCur = lifeMax;
+        isInvulnerable = false;
+    }*/
+
+    public void LoseLife(float value)
+    {
+        SetupVars();
+
+        if (isInvulnerable) return;
+
+        StartCoroutine(Invulnerability());
+
+        lifeCur -= value;
+        if (lifeCur < 1)
+        {
+            Death();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Invulnerability()
     {
-        
+        isInvulnerable = true;
+        yield return new WaitForSeconds(invulnerabilityTime);
+        isInvulnerable = false;
+    }
+
+    private void Death()
+    {
+        isDeath = true;
+        gameObject.SetActive(false);
     }
 }

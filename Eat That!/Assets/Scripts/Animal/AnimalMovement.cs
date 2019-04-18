@@ -8,6 +8,9 @@ public class AnimalMovement : Animal
     private Animal aim;
 
     private Vector2 speedCur;
+    public float speedMax;
+
+    public float speed;
 
     private Rigidbody2D rigid;
 
@@ -15,6 +18,7 @@ public class AnimalMovement : Animal
     {
         noMoreAim = false;
         rigid = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()

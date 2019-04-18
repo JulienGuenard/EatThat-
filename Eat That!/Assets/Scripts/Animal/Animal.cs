@@ -12,21 +12,7 @@ public class Animal : MonoBehaviour
 
     public Owner owner;
 
-    public float speed;
-    private Animal aim;
-    private bool noMoreAim;
-    private Vector2 speedCur;
-    public float speedMax;
 
-    public float lifeMax;
-    private float lifeCur;
-
-    public float invulnerabilityTime;
-    private bool isInvulnerable;
-
-    public float invulnerabilityKnockTime;
-    public float knockbackForce;
-    private bool isInvulnerableKnock;
 
     [HideInInspector] public bool isDeath;
    
@@ -40,13 +26,15 @@ public class Animal : MonoBehaviour
     [HideInInspector] public AnimalEffect animalEffect;
     [HideInInspector] public AnimalKnockback animalKnockback;
 
-    void Awake()
+    private void Awake()
+    {
+        isDeath = false;
+        SetupVars();
+    }
+
+    public void SetupVars()
     {
         rigid = GetComponent<Rigidbody2D>();
-        lifeCur = lifeMax;
-        isInvulnerable = false;
-        isInvulnerableKnock = false;
-        isDeath = false;
 
         animalMovement = GetComponent<AnimalMovement>();
         animalLife = GetComponent<AnimalLife>();
@@ -62,72 +50,15 @@ public class Animal : MonoBehaviour
     {
         if (isDeath) return;
 
-        ChooseAim();
-
-        //Move();
-    }
-
-    void ChooseAim()
-    {
-        if (noMoreAim) return;
-
-        if (aim && !aim.isDeath) return;
-
-        foreach(Animal obj in FindObjectsOfType<Animal>())
-        {
-            if (!obj.isDeath && obj != this && obj.owner != owner)
-            {
-                aim = obj;
-                return;
-            }
-        }
-
-        noMoreAim = true;
-
+        animalMovement.ChooseAim();
+        animalMovement.Move();
     }
 
 
 
-    public void LoseLife(float value)
-    {
-        if (isInvulnerable) return;
 
-        StartCoroutine(Invulnerability());
 
-        lifeCur -= value;
-        if (lifeCur < 1)
-        {
-            Death();
-        }
-    }
 
-    public void Knockbacked(GameObject obj)
-    {
-        if (isInvulnerableKnock) return;
 
-        StartCoroutine(InvulnerabilityKnockback());
 
-        Vector2 pos = -(obj.transform.position - transform.position) * knockbackForce;
-        rigid.AddForce(pos);
-    }
-
-    IEnumerator Invulnerability()
-    {
-        isInvulnerable = true;
-        yield return new WaitForSeconds(invulnerabilityTime);
-        isInvulnerable = false;
-    }
-
-    IEnumerator InvulnerabilityKnockback()
-    {
-        isInvulnerableKnock = true;
-        yield return new WaitForSeconds(invulnerabilityKnockTime);
-        isInvulnerableKnock = false;
-    }
-
-    private void Death()
-    {
-        isDeath = true;
-        gameObject.SetActive(false);
-    }
 }

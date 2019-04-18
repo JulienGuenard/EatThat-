@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class AnimalKnockback : Animal
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float invulnerabilityKnockTime;
+    public float knockbackForce;
+    private bool isInvulnerableKnock;
+
+    private Rigidbody2D rigid;
+
+    private void Awake()
     {
-        
+        rigid = GetComponent<Rigidbody2D>();
+
+        isInvulnerableKnock = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Knockbacked(GameObject obj)
     {
-        
+        if (isInvulnerableKnock) return;
+
+        StartCoroutine(InvulnerabilityKnockback());
+
+        Vector2 pos = -(obj.transform.position - transform.position) * knockbackForce;
+        rigid.AddForce(pos);
+    }
+
+    IEnumerator InvulnerabilityKnockback()
+    {
+        isInvulnerableKnock = true;
+        yield return new WaitForSeconds(invulnerabilityKnockTime);
+        isInvulnerableKnock = false;
     }
 }
