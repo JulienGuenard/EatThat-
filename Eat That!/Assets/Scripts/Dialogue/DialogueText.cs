@@ -8,7 +8,7 @@ public class DialogueText : Dialogue
 
     public void ReadText()
     {
-        dialoguePosition.dialoguePortraitList[0].title.text = dialogueOBJ.titleText;
+
         StartCoroutine(ReadDialogue());
     }
 
@@ -16,11 +16,11 @@ public class DialogueText : Dialogue
     {
         float letterSoundDelay = 2;
         float letterSoundDelayCur = 0;
-        for(int i = 0; i < dialogueOBJ.dialogueText.Length; i++)
+        for(int i = 0; i < dialogueOBJ.dialogueText.Length + 1; i++)
         {
             dialoguePosition.dialoguePortraitCur.dialogue.text = dialogueOBJ.dialogueText.Substring(0, i);
             letterSoundDelayCur++;
-
+            dialoguePosition.dialoguePortraitCur.title.text = dialogueOBJ.titleText;
             if (letterSoundDelayCur >= letterSoundDelay)
             {
                     letterSoundDelayCur = 0;

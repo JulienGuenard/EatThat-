@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intro2
   m_EditorClassIdentifier: 
   titleText: Gustav
-  dialogueText: "H\xE9h\xE9, d\xE9sol\xE9 ma vieille mais on ne passe pas, cet herbe
+  dialogueText: "H\xE9h\xE9, d\xE9sol\xE9 ma vieille mais on ne passe pas, cette herbe
     est pour nous !"
   letterDelay: 0.06
   portrait: {fileID: 21300000, guid: 635a146c5e5e8cf44841015df8f8391a, type: 3}
